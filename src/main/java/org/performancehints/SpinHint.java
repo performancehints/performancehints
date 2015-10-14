@@ -43,6 +43,7 @@ public final class SpinHint {
      */
     public static void spinLoopHint() {
         // Call Thread.spinLoopHint() on Java SE versions that support it. Do nothing otherwise.
+        // This should optimize away to either nothing or to an inlining of Thread.spinLoopHint()
         if (spinLoopHintMH != null) {
             try {
                 spinLoopHintMH.invokeExact();
