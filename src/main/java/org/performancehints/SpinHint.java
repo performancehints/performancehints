@@ -19,7 +19,7 @@ public final class SpinHint {
         MethodHandle mh;
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         try {
-            mh = lookup.findStatic(Thread.class, "spinLoop", MethodType.methodType(void.class));
+            mh = lookup.findStatic(Thread.class, "spinLoopHint", MethodType.methodType(void.class));
         } catch (Exception e) {
             mh = null;
         }
